@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/17 21:30:37 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/19 20:40:52 by kakadlec         ###   ########.fr       */
+/*   Created: 2021/05/19 19:42:30 by kakadlec          #+#    #+#             */
+/*   Updated: 2021/05/19 21:00:41 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	char *tmp;
 
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void 	*ft_memmove(void *dest, const void *src, size_t n);
-
-#endif
+	tmp = (char *)src;
+	ft_memcpy(tmp, src, n);
+	ft_memcpy(dest, tmp, n);
+	return (dest);
+}
