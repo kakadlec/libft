@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/17 21:30:37 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/22 11:24:12 by kakadlec         ###   ########.fr       */
+/*   Created: 2021/05/22 11:19:32 by kakadlec          #+#    #+#             */
+/*   Updated: 2021/05/22 11:41:37 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const char	*mem_area;
+	size_t		i;
 
-void	ft_bzero(void *s, size_t n);
-void	*ft_memset(void *s, int c, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void 	*ft_memmove(void *dest, const void *src, size_t n);
-
-#endif
+	mem_area = (const char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (*(mem_area + i) == (char)c)
+			return ((void *)mem_area + i);
+		i++;
+	}
+	return (NULL);
+}
