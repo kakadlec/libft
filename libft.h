@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:30:37 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/22 13:17:59 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/05/23 15:45:46 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char	*big, const char *little, size_t len);
+
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	ft_bzero(void *s, size_t n);
 
