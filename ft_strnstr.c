@@ -6,11 +6,10 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 15:23:07 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/23 16:28:29 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/05/23 16:45:27 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char	*big, const char *little, size_t len)
