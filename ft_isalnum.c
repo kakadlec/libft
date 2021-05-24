@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 16:39:13 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/24 19:48:50 by kakadlec         ###   ########.fr       */
+/*   Created: 2021/05/24 20:08:12 by kakadlec          #+#    #+#             */
+/*   Updated: 2021/05/24 20:13:38 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
+	if(ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	}
 	return (0);
 }
