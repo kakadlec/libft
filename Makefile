@@ -19,7 +19,9 @@ SRCS	=	ft_memset.c		\
 			ft_isascii.c	\
 			ft_isprint.c	\
 			ft_toupper.c	\
-			ft_tolower.c
+			ft_tolower.c	\
+			ft_calloc.c		\
+			ft_strdup.c
 
 OBJS		= $(SRCS:.c=.o)
 
