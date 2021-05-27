@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 16:40:43 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/24 19:39:13 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/05/26 22:25:34 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int result;
-	int signal;
+	int	result;
+	int	signal;
 
 	result = 0;
 	signal = 1;
