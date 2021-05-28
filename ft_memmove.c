@@ -6,18 +6,37 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:42:30 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/26 22:27:21 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/05/27 21:03:51 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*tmp;
+	char	*src_copy;
+	char	*dst_copy;
+	size_t	i;
 
-	tmp = (char *)src;
-	ft_memcpy(tmp, src, n);
-	ft_memcpy(dest, tmp, n);
-	return (dest);
+	i = 0;
+	src_copy = (char *)src;
+	dst_copy = (char *)dst;
+	if (src_copy < dst_copy)
+	{
+		while ((int)(n - 1) >= 0)
+		{
+			*(dst_copy + n - 1) = *(src_copy + n - 1);
+			n--;
+		}
+	}
+	else
+	{
+		while (i < n)
+		{
+			*(dst_copy + i) = *(src_copy + i);
+			i++;
+		}
+	}
+	return (dst);
 }
