@@ -6,25 +6,25 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:30:31 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/17 22:04:30 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/03 20:14:29 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	char	*p_dest;
+	char	*p_dst;
 	char	*p_src;
 
-	p_dest = dest;
+	p_dst = dst;
 	p_src = (char *)src;
 	i = 0;
 	while (i < n)
 	{
-		*(p_dest + i) = *(p_src + i);
+		*(p_dst + i) = *(p_src + i);
 		i++;
 	}
-	return (dest);
+	return (dst);
 }
