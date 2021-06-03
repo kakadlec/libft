@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/03 13:10:08 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/03 14:34:22 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 			split[i] = malloc(sizeof(char *) * (ft_strsublen(s, c) + 1));
 			if (split[i])
 			{
-				ft_memcpy(split[i], s, ft_strsublen(s, c));
+				ft_strlcpy(split[i], s, ft_strsublen(s, c) + 1);
 				i++;
 			}
 			s += ft_strsublen(s, c);
