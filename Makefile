@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/03 20:25:36 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/03 20:45:37 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,6 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 				@ar -rcs $(NAME) $(OBJS)
 				@ranlib $(NAME)
-
 .c.o:
 			@clang -Wall -Wextra -Werror -c $< -o ${<:.c=.o} -I./
 clean:
