@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 16:59:57 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/02 21:23:23 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/03 13:27:47 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int	chars(int n)
 
 char	*ft_itoa(int n)
 {
-	int			i;
-	unsigned	number;
-	char		*buffer;
+	int				i;
+	unsigned int	number;
+	char			*buffer;
 
 	i = chars(n);
 	number = n;
