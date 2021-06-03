@@ -6,17 +6,16 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/30 16:59:12 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/03 13:10:08 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-static int ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
 	int	i;
-	int words;
+	int	words;
 
 	i = 0;
 	words = 0;
@@ -33,33 +32,45 @@ static int ft_count_words(char const *s, char c)
 		if (s[i])
 			i++;
 	}
-	return (words);
+	return (words + 1);
+}
+
+static int	ft_strsublen(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	len;
-	int		start;
-	int		count;
-	int		k;
-	char	**splitted;
+	char	**split;
+	size_t	i;
 
-	count = 0;
-	start = 0;
-	k = 0;
-	len = ft_strlen(s) + 1;
-	if (!(splitted = malloc(sizeof(char *) * (ft_count_words(s, c) + 1))))
+	split = malloc(sizeof(char *) * ft_count_words(s, c));
+	if (!split)
 		return (NULL);
-	while (count < (int)len)
+	i = 0;
+	while (*s)
 	{
-		if (*(s + count) == c || *(s + count) == '\0')
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			splitted[k] = malloc(sizeof(char) * (count - start));
-			splitted[k] = ft_substr(s, start, count - start);
-			k++;
-			start = count + 1;
+			split[i] = malloc(sizeof(char *) * (ft_strsublen(s, c) + 1));
+			if (split[i])
+			{
+				ft_memcpy(split[i], s, ft_strsublen(s, c));
+				i++;
+			}
+			s += ft_strsublen(s, c);
 		}
-		count++;
 	}
-	return (splitted);
+	split[i] = 0;
+	return (split);
 }
