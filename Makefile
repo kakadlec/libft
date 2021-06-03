@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/03 13:50:40 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/03 18:47:42 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRCS	=	ft_memset.c		\
 
 OBJS		= $(SRCS:.c=.o)
 
-CC			= gcc
+CC			= clang
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
