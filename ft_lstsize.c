@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:22:25 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/04 17:22:44 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/04 18:05:28 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
+	int		i;
 
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
