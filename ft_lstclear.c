@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:24:15 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/04 17:24:32 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/04 20:35:10 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list *temp;
 
+	while (*lst != NULL)
+	{
+		del((*lst)->content);
+		temp = *lst;
+		*lst = temp->next;
+		free(temp);
+	}
+	*lst = NULL;
 }

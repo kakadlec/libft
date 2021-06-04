@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/04 17:18:51 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/04 20:37:53 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,10 +72,11 @@ $(NAME):	$(OBJS)
 .c.o:
 			@clang -Wall -Wextra -Werror -c $< -o ${<:.c=.o} -I./
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(OBJS_B)
 fclean:		clean
 				$(RM) $(NAME)
 re:			fclean $(NAME)
 
 bonus:		$(NAME) $(OBJS_B)
 				@ar -rcs $(NAME) $(OBJS_B)
+				@ranlib $(NAME)
