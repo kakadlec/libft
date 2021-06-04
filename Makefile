@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/03 20:53:56 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/04 17:18:51 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,18 @@ SRCS	=	ft_atoi.c		\
 			ft_tolower.c	\
 			ft_toupper.c	\
 
-OBJS		= $(SRCS:.c=.o)
+BONUS	=	ft_lstadd_back.c	\
+			ft_lstadd_front.c	\
+			ft_lstclear.c		\
+			ft_lstdelone.c		\
+			ft_lstiter.c		\
+			ft_lstlast.c		\
+			ft_lstmap.c			\
+			ft_lstnew.c			\
+			ft_lstsize.c		\
+
+OBJS	=	$(SRCS:.c=.o)
+OBJS_B	=	$(BONUS:.c=.o)
 
 CC			= clang
 RM			= rm -f
@@ -65,3 +76,6 @@ clean:
 fclean:		clean
 				$(RM) $(NAME)
 re:			fclean $(NAME)
+
+bonus:		$(NAME) $(OBJS_B)
+				@ar -rcs $(NAME) $(OBJS_B)
