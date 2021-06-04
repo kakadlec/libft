@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:24:43 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/04 20:31:44 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/04 20:42:13 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
-		{
-			f(lst->content);
-			lst = lst->next;
-		}
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
