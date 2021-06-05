@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 17:57:43 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 18:30:29 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ static int	ft_count_words(char const *s, char c)
 
 	i = 0;
 	words = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i])
+	while (*s && *s == c)
+		s++;
+	while (*s)
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-			words++;
-		i++;
+		while (*s && *s != c)
+			s++;
+		words++;
+		while (*s && *s == c)
+			s++;
 	}
 	return (words + 1);
 }
@@ -35,9 +37,7 @@ static int	ft_strsublen(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
-	while (s[i] && s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 		i++;
 	return (i);
 }
@@ -49,7 +49,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	split = (char **)malloc(ft_count_words(s, c) * sizeof(char *));
+	split = ft_calloc(ft_count_words(s, c), sizeof(char *));
 	if (!split)
 		return (NULL);
 	i = 0;
@@ -61,7 +61,10 @@ char	**ft_split(char const *s, char c)
 		{
 			split[i] = malloc(sizeof(char *) * (ft_strsublen(s, c) + 1));
 			if (split[i])
-				ft_strlcpy(split[i++], s, ft_strsublen(s, c) + 1);
+			{
+				ft_strlcpy(split[i], s, ft_strsublen(s, c) + 1);
+				i++;
+			}
 			s += ft_strsublen(s, c);
 		}
 	}
