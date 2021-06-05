@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:25:12 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/04 20:41:31 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 16:48:54 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!f || !lst)
 		return (NULL);
+	new_lst = NULL;
 	while (lst)
 	{
 		temp = ft_lstnew(f(lst->content));
