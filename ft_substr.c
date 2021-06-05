@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 21:30:29 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 17:22:06 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 17:26:55 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	size_t	counter;
-	size_t	size;
+	char	*str;
+	size_t	count;
+	size_t	i;
 
-	sub = 0;
-	counter = start;
-	size = 0;
+	i = 0;
 	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	while ((s[counter] != '\0') && (counter <= len))
-		counter++;
-	sub = malloc(len + 1);
-	if (!sub)
 		return (NULL);
-	counter = start;
-	while (s[counter] != '\0' && (size < len))
+	if (start > ft_strlen(s))
+		size = 0;
+	else if (ft_strlen(s) - start < len)
+		size = ft_strlen(s) - start;
+	else
+		size = len;
+	str = malloc((size + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	while (*(s + start) && i < len)
 	{
-		sub[size] = s[counter];
-		counter++;
-		size++;
+		*(str + i) = *(s + start);
+		start++;
+		i++;
 	}
-	sub[size] = '\0';
-	return (sub);
+	*(str + i) = '\0';
+	return (str);
 }
