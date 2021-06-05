@@ -6,70 +6,89 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 17:47:21 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 17:50:53 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static size_t	get_size(char const *s, char const *aux_s)
 {
-	int	i;
-	int	words;
+	size_t	size;
 
-	i = 0;
-	words = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i])
+	size = 0;
+	while (s != aux_s)
 	{
-		if (s[i] != c)
-		{
-			words++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
-		if (s[i])
-			i++;
+		size++;
+		s++;
 	}
-	return (words + 1);
+	return (size);
 }
 
-static int	ft_strsublen(char const *s, char c)
+static size_t	count_worlds(char const *s, char c)
 {
-	size_t	i;
+	size_t	count;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
+	count = 1;
+	while (*s == c)
+		s++;
+	while (*s)
+	{
+		if (*s == c && *(s + 1) != c && *(s + 1) != '\0')
+			count++;
+		s++;
+	}
+	return (++count);
+}
+
+static int	add_str(char **m, char const *s, char const *aux_s, size_t count)
+{
+	size_t	index;
+	size_t	size_str;
+
+	size_str = get_size(s, aux_s);
+	if (size_str > 0)
+	{
+		m[count] = (char *)ft_calloc(size_str + 1, sizeof(char));
+		if (m[count])
+		{
+			index = 0;
+			while (index < size_str)
+			{
+				m[count][index] = s[index];
+				index++;
+			}
+		}
+		count++;
+	}
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	size_t	i;
+	char const	*aux_s;
+	size_t		count;
+	char		**matrix;
 
 	if (!s)
 		return (NULL);
-	split = (char **)malloc(ft_count_words(s, c) * sizeof(char *));
-	if (!split)
-		return (NULL);
-	i = 0;
-	while (*s)
+	aux_s = s;
+	count = 0;
+	matrix = (char **)malloc(count_worlds(s, c) * sizeof(char *));
+	if (matrix)
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		while (*aux_s)
 		{
-			split[i] = malloc(sizeof(char *) * (ft_strsublen(s, c) + 1));
-			if (split[i])
-				ft_strlcpy(split[i++], s, ft_strsublen(s, c) + 1);
-			s += ft_strsublen(s, c);
+			if (*aux_s == c)
+			{
+				count = add_str(matrix, s, aux_s, count);
+				s = aux_s + 1;
+			}
+			aux_s++;
 		}
+		if (*s != '\0')
+			add_str(matrix, s, aux_s, count++);
+		matrix[count] = NULL;
 	}
-	split[i] = 0;
-	return (split);
+	return (matrix);
 }
