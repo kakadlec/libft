@@ -6,11 +6,10 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 13:17:37 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/03 19:42:57 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 19:08:11 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

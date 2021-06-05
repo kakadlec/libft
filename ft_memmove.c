@@ -6,11 +6,10 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:42:30 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/27 21:03:51 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 19:07:44 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)

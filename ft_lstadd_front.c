@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:21:51 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/04 17:56:57 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 19:06:22 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
