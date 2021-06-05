@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:23:46 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/04 20:27:44 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 18:55:37 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst->content);
-	free(lst);
+	if(lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
