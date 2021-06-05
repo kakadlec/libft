@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/03 14:34:22 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 17:47:21 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 	size_t	i;
 
-	split = malloc(sizeof(char *) * ft_count_words(s, c));
+	if (!s)
+		return (NULL);
+	split = (char **)malloc(ft_count_words(s, c) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	i = 0;
@@ -64,10 +66,7 @@ char	**ft_split(char const *s, char c)
 		{
 			split[i] = malloc(sizeof(char *) * (ft_strsublen(s, c) + 1));
 			if (split[i])
-			{
-				ft_strlcpy(split[i], s, ft_strsublen(s, c) + 1);
-				i++;
-			}
+				ft_strlcpy(split[i++], s, ft_strsublen(s, c) + 1);
 			s += ft_strsublen(s, c);
 		}
 	}
