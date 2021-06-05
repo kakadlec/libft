@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 18:30:29 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/05 18:46:39 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static int	ft_strsublen(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
+	int		start;
 	size_t	i;
 
 	if (!s)
@@ -53,21 +54,16 @@ char	**ft_split(char const *s, char c)
 	if (!split)
 		return (NULL);
 	i = 0;
-	while (*s)
+	start = -1;
+	while (s[++start])
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		if (s[start] != c && s[start] != '\0')
 		{
-			split[i] = malloc(sizeof(char *) * (ft_strsublen(s, c) + 1));
-			if (split[i])
-			{
-				ft_strlcpy(split[i], s, ft_strsublen(s, c) + 1);
-				i++;
-			}
-			s += ft_strsublen(s, c);
+			split[i] = ft_substr(s, start, ft_strsublen(&s[start], c));
+			i++;
+			start += ft_strsublen(&s[start], c) - 1;
 		}
 	}
-	split[i] = 0;
+	split[i] = NULL;
 	return (split);
 }
