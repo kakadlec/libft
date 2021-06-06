@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 16:40:43 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/27 20:04:30 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:43:39 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	result;
-	int	signal;
+	long int	result;
+	int			signal;
 
 	result = 0;
 	signal = 1;
@@ -28,11 +28,15 @@ int	ft_atoi(const char *nptr)
 			signal = -1;
 		nptr++;
 	}
-	while (*nptr && *nptr >= '0' && *nptr <= '9')
+	while (ft_isdigit(*nptr))
 	{
 		result = result * 10;
 		result = result + *nptr - '0';
 		nptr++;
+		if (result > 2147483647 && signal == 1)
+			return (-1);
+		if (result > 2147483648 && signal == -1)
+			return (0);
 	}
-	return (result * signal);
+	return ((int)(result * signal));
 }

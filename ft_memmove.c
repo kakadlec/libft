@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:42:30 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 19:07:44 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:45:59 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	char	*dst_copy;
 	size_t	i;
 
-	i = 0;
+	i = -1;
 	src_copy = (char *)src;
 	dst_copy = (char *)dst;
+	if (!dst_copy && !src_copy)
+		return (NULL);
 	if (src_copy < dst_copy)
 	{
 		while ((int)(n - 1) >= 0)
@@ -30,12 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	else
-	{
-		while (i < n)
-		{
+		while (++i < n)
 			*(dst_copy + i) = *(src_copy + i);
-			i++;
-		}
-	}
 	return (dst);
 }

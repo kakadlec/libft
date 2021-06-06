@@ -6,11 +6,11 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/06 12:10:37 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/06 14:06:18 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	ft_atoi.c		\
+FILES	=	ft_atoi.c		\
 			ft_bzero.c		\
 			ft_calloc.c		\
 			ft_isalnum.c	\
@@ -46,7 +46,7 @@ SRCS	=	ft_atoi.c		\
 			ft_tolower.c	\
 			ft_toupper.c	\
 
-BONUS	=	ft_lstadd_back.c	\
+FILES_B	=	ft_lstadd_back.c	\
 			ft_lstadd_front.c	\
 			ft_lstclear.c		\
 			ft_lstdelone.c		\
@@ -56,27 +56,37 @@ BONUS	=	ft_lstadd_back.c	\
 			ft_lstnew.c			\
 			ft_lstsize.c		\
 
-OBJS	=	$(SRCS:.c=.o)
-OBJS_B	=	$(BONUS:.c=.o)
+OBJS	=	$(FILES:%.c=%.o)
+OBJS_B	=	$(FILES_B:%.c=%.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Werror -Wextra -I. -c
 RM			= rm -f
 
 NAME		= libft.a
+HEADER		= libft.h
 
 all:		$(NAME)
+
 $(NAME):	$(OBJS)
-				@ar -rcs $(NAME) $(OBJS)
-				@ranlib $(NAME)
-.c.o:
-			$(CC) $(CFLAGS) -c $< -o ${<:.c=.o} -I./
+			@ar rcs $(NAME) $(OBJS)
+
+$(OBJS):	$(FILES)
+			$(CC) $(CFLAGS) $(FILES)
+
+bonus:
+			$(CC) $(CFLAGS) $(FILES_B)
+			@ar rcs $(NAME) $(OBJS_B)
+
 clean:
-				$(RM) $(OBJS) $(OBJS_B)
+			$(RM) $(OBJS) $(OBJS_B)
 fclean:		clean
-				$(RM) $(NAME)
+			$(RM) $(NAME)
+
 re:			fclean $(NAME)
 
-bonus:		$(NAME) $(OBJS_B)
-				@ar -rcs $(NAME) $(OBJS_B)
-				@ranlib $(NAME)
+so:
+			$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES) $(FILES_B)
+			gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_B)
+
+.PHONY: clean fclean all re
