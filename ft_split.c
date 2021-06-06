@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 18:46:39 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/06/06 11:57:29 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static int	ft_count_words(char const *s, char c)
 {
-	int	i;
 	int	words;
 
-	i = 0;
 	words = 0;
 	while (*s && *s == c)
 		s++;

@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/04 20:37:53 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/06 11:44:01 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ BONUS	=	ft_lstadd_back.c	\
 OBJS	=	$(SRCS:.c=.o)
 OBJS_B	=	$(BONUS:.c=.o)
 
-CC			= clang
+CC			= gcc
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
@@ -70,7 +70,7 @@ $(NAME):	$(OBJS)
 				@ar -rcs $(NAME) $(OBJS)
 				@ranlib $(NAME)
 .c.o:
-			@clang -Wall -Wextra -Werror -c $< -o ${<:.c=.o} -I./
+			$(CC) $(CFLAGS) -c $< -o ${<:.c=.o} -I./
 clean:
 				$(RM) $(OBJS) $(OBJS_B)
 fclean:		clean
