@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/06 11:44:01 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/06 12:10:37 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,8 +60,8 @@ OBJS	=	$(SRCS:.c=.o)
 OBJS_B	=	$(BONUS:.c=.o)
 
 CC			= gcc
-RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -f
 
 NAME		= libft.a
 
