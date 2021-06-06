@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/06 16:14:09 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/06 16:20:44 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ FILES_B	=	ft_lstadd_back.c	\
 OBJS	=	$(FILES:%.c=%.o)
 OBJS_B	=	$(FILES_B:%.c=%.o)
 
-CC			= gcc
+CC			= clang
 CFLAGS		= -Wall -Werror -Wextra -I. -c
 RM			= rm -f
 
