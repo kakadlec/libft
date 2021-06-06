@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2021/06/06 14:06:18 by kakadlec         ###   ########.fr        #
+#    Updated: 2021/06/06 16:14:09 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,9 +84,5 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean $(NAME)
-
-so:
-			$(CC) -nostartfiles -fPIC $(CFLAGS) $(FILES) $(FILES_B)
-			gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_B)
 
 .PHONY: clean fclean all re
