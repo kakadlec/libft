@@ -6,13 +6,16 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 20:42:51 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/31 20:57:50 by kakadlec         ###   ########.fr       */
+/*   Updated: 2021/11/07 18:52:23 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	int	count;
+
+	count = write(fd, &c, 1);
+	return (count);
 }
