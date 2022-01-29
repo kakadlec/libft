@@ -6,12 +6,20 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 16:32:06 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/26 22:28:19 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/01/29 14:21:33 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compare the first n bytes of s1 and s2
+ *
+ * @param s1 First string
+ * @param s2 Second string
+ * @param n Bytes to compare
+ * @return Returns < 0, 0 or > 0 if the string s1 is smaller, equal or bigger then s2
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (*s1 && *s2 && n > 0)

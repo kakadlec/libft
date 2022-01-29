@@ -6,12 +6,20 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 14:43:14 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/23 14:49:50 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/01/29 14:29:27 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Concatenate src in dst
+ *
+ * @param dst A nul-terminated string
+ * @param src A nul-terminated string
+ * @param size Size of dst
+ * @return The total length of the string they tried to create
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	char			*dstc;

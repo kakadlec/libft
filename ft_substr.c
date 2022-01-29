@@ -6,12 +6,20 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 21:30:29 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 17:34:57 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/01/29 14:22:30 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Get a substring of a string
+ *
+ * @param s The string
+ * @param start The start point
+ * @param len How much bytes to copy (1 byte = 1 char)
+ * @return Return a new pointer to the substring ***Needs Free***
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;

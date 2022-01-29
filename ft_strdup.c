@@ -6,12 +6,18 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 21:09:47 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/24 21:26:36 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/01/29 14:19:32 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copy a string to a new pointer
+ *
+ * @param s The string to be copied
+ * @return Returns a new pointer with the copied string ***Needs Free***
+ */
 char	*ft_strdup(const char *s)
 {
 	char	*copy;
