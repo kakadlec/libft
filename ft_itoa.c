@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 16:59:57 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/03 13:27:47 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:57:44 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ static int	chars(int n)
 	return (i);
 }
 
+/**
+ * @brief Allocates (with malloc) and returns a string representing
+ * the integer received as an argument.
+ *
+ * @param n The integer to convert
+ * @return The string representing the integer.
+ * NULL if the allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	int				i;

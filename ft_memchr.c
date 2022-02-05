@@ -6,12 +6,21 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:19:32 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/22 11:41:37 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:57:49 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Scans the initial n bytes of s for the first instance of c
+ *
+ * @param s Memory area s
+ * @param c A character to search
+ * @param n The number of bytes
+ * @return void* A pointer to the matching byte or NULL if the character
+ * does not occur in the given memory area
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const char	*mem_area;

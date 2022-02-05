@@ -6,12 +6,21 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 13:17:37 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/05 19:08:11 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:15 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies up to dstsize - 1 characters from the NUL-terminated
+ * string src to dst, NUL-terminating the result
+ *
+ * @param dst Destination array
+ * @param src String to be copied
+ * @param size Number of characters to be copied from src
+ * @return Total length of the string to create (length of src)
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

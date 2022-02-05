@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 16:32:06 by kakadlec          #+#    #+#             */
-/*   Updated: 2022/01/29 14:21:33 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:22 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
  * @param s1 First string
  * @param s2 Second string
  * @param n Bytes to compare
- * @return Returns < 0, 0 or > 0 if the string s1 is smaller, equal or bigger then s2
+ * @return Returns < 0, 0 or > 0 if the string s1 is smaller,
+ * equal or bigger then s2
  */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

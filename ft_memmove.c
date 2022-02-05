@@ -6,12 +6,22 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:42:30 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/06 15:45:59 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:57:57 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies len bytes from the memory of src to dst.
+ * Memories may overlap. First, the bytes in src are copied
+ * into a temporary array and then to dst.
+ *
+ * @param dst Memory area dst
+ * @param src Memory ares src
+ * @param n The number of bytes
+ * @return A pointer to the memory area dst
+ */
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char	*src_copy;

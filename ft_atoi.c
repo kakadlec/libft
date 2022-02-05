@@ -6,12 +6,20 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 16:40:43 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/06 15:43:39 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:57:25 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Allocates (with malloc) and returns a string representing the
+ * integer received as an argument.
+ *
+ * @param nptr The integer to convert
+ * @return int The string representing the integer. NULL if the
+ * allocation fails.
+ */
 int	ft_atoi(const char *nptr)
 {
 	long int	result;

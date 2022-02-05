@@ -6,19 +6,21 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 14:43:14 by kakadlec          #+#    #+#             */
-/*   Updated: 2022/01/29 14:29:27 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:13 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Concatenate src in dst
+ * @brief Concatenate the string src to the end of dst.
+ * It will concatenate at most size - strlen(dst) - 1 bytes,
+ * NUL-terminating the result
  *
- * @param dst A nul-terminated string
- * @param src A nul-terminated string
- * @param size Size of dst
- * @return The total length of the string they tried to create
+ * @param dst Destination array
+ * @param src String to be appended to dst
+ * @param size Maximum number of characters to be appended
+ * @return The initial length of dst plus the length of src
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

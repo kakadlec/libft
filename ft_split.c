@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:04:04 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/06 11:57:29 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:04 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ static int	ft_strsublen(char const *s, char c)
 	return (i);
 }
 
+/**
+ * @brief Allocates (with malloc) and returns an array of strings obtained
+ * by splitting s using the character 'c' as a delimiter.
+ * The array must be ended by a NULL pointer
+ *
+ * @param s The string to be split
+ * @param c The delimiter character
+ * @return The array of new strings result of the split.
+ * NULL if the allocation fails
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**split;

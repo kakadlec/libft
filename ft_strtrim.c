@@ -6,7 +6,7 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 22:01:39 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/06 15:40:14 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:30 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@ static int	ft_lookup(char c, char const *set)
 	return (0);
 }
 
+/**
+ * @brief Allocates (with malloc) and returns a copy of the string
+ * given as argument without the characters specified in the
+ * set argument at the beginning and the end of the string
+ *
+ * @param s1 The string to be trimmed
+ * @param set The reference set of character to trim
+ * @return The trimmed string. NULL if the allocation fails
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*copy;

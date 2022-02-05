@@ -6,12 +6,22 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:30:31 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/06 14:27:03 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:57:54 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies n bytes from memory area src to memory of dst.
+ * The memory areas must not overlap.
+ * Use ft_memmove if the memory areas do overlap.
+ *
+ * @param dst Memory area dst
+ * @param src Memory area src
+ * @param n The number of bytes
+ * @return A pointer to the memory area dst
+ */
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;

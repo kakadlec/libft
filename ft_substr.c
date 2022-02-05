@@ -6,19 +6,21 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 21:30:29 by kakadlec          #+#    #+#             */
-/*   Updated: 2022/01/29 14:22:30 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:42:15 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Get a substring of a string
+ * @brief Allocates (with malloc) and returns a substring from
+ * the string given in argument. The substring begins at
+ * index 'start' and is of maximum size 'len'
  *
- * @param s The string
- * @param start The start point
- * @param len How much bytes to copy (1 byte = 1 char)
- * @return Return a new pointer to the substring ***Needs Free***
+ * @param s The string from which create the substring
+ * @param start The start index of the substring in the string
+ * @param len The maximum length of the substring
+ * @return The substring. NULL if the allocation fails
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

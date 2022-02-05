@@ -6,17 +6,19 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 21:09:47 by kakadlec          #+#    #+#             */
-/*   Updated: 2022/01/29 14:19:32 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:09 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Copy a string to a new pointer
+ * @brief Duplicate string s1. Memory for the new string is
+ * obtained with malloc, and can be freed with free
  *
- * @param s The string to be copied
- * @return Returns a new pointer with the copied string ***Needs Free***
+ * @param s The string to duplicate
+ * @return A pointer to the duplicated string.
+ * NULL if insufficient memory was available
  */
 char	*ft_strdup(const char *s)
 {

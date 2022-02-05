@@ -6,19 +6,19 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:30:34 by kakadlec          #+#    #+#             */
-/*   Updated: 2022/01/29 14:36:03 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:00 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Fill memory with a constant byte
+ * @brief Fill with "n" bytes of "c" the memory of "s"
  *
- * @param s Start point
- * @param c Constant byte
- * @param n Number of bytes to fill up
- * @return Return a pointer to the memory area s
+ * @param s The string on which to operate
+ * @param c Value c (converted to an unsigned char)
+ * @param n The number of bytes
+ * @return A pointer to the memory area s
  */
 void	*ft_memset(void *s, int c, size_t n)
 {

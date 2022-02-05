@@ -6,7 +6,7 @@
 #    By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 13:50:38 by kakadlec          #+#    #+#              #
-#    Updated: 2022/01/24 22:37:54 by kakadlec         ###   ########.fr        #
+#    Updated: 2022/02/05 09:45:05 by kakadlec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,10 @@ $(NAME):	$(OBJS)
 
 $(OBJS):	$(FILES)
 			$(CC) $(CFLAGS) $(FILES)
+
+norme:
+	norminette *.c *.h
+	@echo
 
 clean:
 			$(RM) $(OBJS) $(OBJS_B) $(OBJS_X)

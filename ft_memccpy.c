@@ -6,12 +6,25 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 21:30:31 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/06/06 14:42:33 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:57:46 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies n bytes from memory area src to memory area dst,
+ * stopping when the character c is found, or after n characters are copied,
+ * whichever comes first. If copying takes place between objects that
+ * overlap, the behavior is undefined.
+ *
+ * @param dst Memory area dst
+ * @param src Memory area src
+ * @param c A character to search
+ * @param n Number of bytes that memccpy() copied
+ * @return A pointer to the next character in dst after c,
+ * or NULL if c was not found in the first n bytes
+ */
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;

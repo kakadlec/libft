@@ -6,12 +6,25 @@
 /*   By: kakadlec <kakadlec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 15:23:07 by kakadlec          #+#    #+#             */
-/*   Updated: 2021/05/26 22:29:06 by kakadlec         ###   ########.fr       */
+/*   Updated: 2022/02/05 09:58:24 by kakadlec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Locate substring, where not more than 'len' characters
+ * are searched. Finds the first occurrence of the substring 'little'
+ * in the string 'big'.
+ * The terminating null bytes ('\0') are not compared.
+ *
+ * @param big String to be scanned
+ * @param little The small string to be searched in 'big' string
+ * @param len The maximum amount of characters to be searched
+ * @return A pointer to the first character of the first occurrence
+ * of little is returned. NULL if the substring is not found.
+ * If 'little' is an empty string, 'big' is returned
+ */
 char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
 	size_t	i;
